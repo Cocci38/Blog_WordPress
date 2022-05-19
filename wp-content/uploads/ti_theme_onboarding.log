@@ -1,0 +1,20 @@
+[19/May/2022:07:40:08] (I): WordPress Instance Info:
+[19/May/2022:07:40:08] (I): Home URL : http://localhost/blog_wordpress
+[19/May/2022:07:40:08] (I): Site URL : http://localhost/blog_wordpress
+[19/May/2022:07:40:08] (I): WordPress Version : 5.9.3
+[19/May/2022:07:40:08] (I): Onboarding Version : 1.1.21
+[19/May/2022:07:40:08] (I): Multisite : No
+[19/May/2022:07:40:08] (I): Server Info : Apache/2.4.47 (Win64) OpenSSL/1.1.1k PHP/7.4.19
+[19/May/2022:07:40:08] (I): PHP Version : 7.4.19
+[19/May/2022:07:40:08] (I): HTTPS : No
+[19/May/2022:07:40:08] (I): PHP Max Execution Time : 36000
+[19/May/2022:07:40:08] (I): PHP Max Input Vars : 1000
+[19/May/2022:07:40:08] (I): Max Upload Size : 2147483648
+[19/May/2022:07:40:08] (I): Plugins:
+[19/May/2022:07:40:08] (I): [PLUGIN] Brizy : v2.4.0 (Brizy.io)
+[19/May/2022:07:40:08] (I): [PLUGIN] Contact Form 7 : v5.5.6.1 (Takayuki Miyoshi)
+[19/May/2022:07:40:08] (I): [PLUGIN] Facebook Like Box : v2.9 (Sunento Agustiar Wu)
+[19/May/2022:07:40:08] (I): [PLUGIN] Flamingo : v2.2.3 (Takayuki Miyoshi)
+[19/May/2022:07:40:08] (I): [PLUGIN] Gutenberg Blocks and Template Library by Otter : v2.0.4 (ThemeIsle)
+[19/May/2022:07:40:08] (I): [PLUGIN] Simple Iframe : v1.1.1 (Jorge González)
+[19/May/2022:07:40:08] (I): [PLUGIN] Templates Patterns Collection : v1.1.21 (ThemeIsle)
