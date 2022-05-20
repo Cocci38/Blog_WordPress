@@ -4,6 +4,7 @@
 Plugin Name: Mon premier plugin
 Description: Mon premier plugin !
 Author: Cocci38
+Version: 0.1
 */
 /*
 C’est le fichier principal du plugin
