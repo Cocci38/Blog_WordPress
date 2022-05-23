@@ -301,6 +301,10 @@ class wpdb {
 		'term_relationships',
 		'termmeta',
 		'commentmeta',
+		'wp_mfp_champ',
+		'wp_mfp_formulaire',
+		'wp_mfp_input',
+		'wp_mfp_liaison',
 	);
 
 	/**
@@ -341,6 +345,58 @@ class wpdb {
 		'sitemeta',
 		'sitecategories',
 		'registration_log',
+	);
+
+	/**
+	 * WordPress Comments table.
+	 *
+	 * @since 1.5.0
+	 *
+	 * @var string[]
+	 */
+	public $wp_mfp_champ = array(
+		'id_champ',
+		'name_champ',
+		'input_id',
+	);
+
+	/**
+	 * WordPress Comments table.
+	 *
+	 * @since 1.5.0
+	 *
+	 * @var string[]
+	 */
+	public $wp_mfp_formulaire = array(
+		'id_formulaire',
+		'category_id',
+		'liaison_id',
+	);
+
+	/**
+	 * WordPress Comments table.
+	 *
+	 * @since 1.5.0
+	 *
+	 * @var string[]
+	 */
+	public $wp_mfp_input = array(
+		'id_input',
+		'input_id',
+		'champ_id',
+		'formulaire_id',
+	);
+
+	/**
+	 * WordPress Comments table.
+	 *
+	 * @since 1.5.0
+	 *
+	 * @var string[]
+	 */
+	public $wp_mfp_liaison = array(
+		'id_liaison',
+		'type',
 	);
 
 	/**
