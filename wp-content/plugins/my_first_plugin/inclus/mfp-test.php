@@ -34,7 +34,7 @@ $args = array(
         array(
             'taxonomy' => 'category',
             'field'    => 'slug',
-            'terms'    =>'beignet',
+            'terms'    =>'glace',
         ),
     ),
 );
@@ -48,12 +48,14 @@ if( $my_query->have_posts() ) : while( $my_query->have_posts() ) : $my_query->th
     the_ID();
     the_category();
     the_title();
-    the_content();
+    //the_content();
     //the_post_thumbnail();
-    
+
 endwhile;
 endif;
-
+$cat_id = get_cat_ID ( 'glace' );
+var_dump($cat_id);
 // On réinitialise à la requête principale (important)
 wp_reset_postdata();
 //echo '<pre>' .print_r($my_query) . '<pre>';
+
