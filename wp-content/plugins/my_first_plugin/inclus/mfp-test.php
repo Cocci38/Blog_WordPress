@@ -31,8 +31,9 @@ L’écriture d’une nouvelle fonction implique les étapes suivantes :
 // $cat = get_query_var('cat');
 // query_posts('cat' . $cat );
 // var_dump(query_posts('cat' . $cat . '&orderby=desc'));
+add_action('init', 'cat');
 $args = array(
-    'post_type' => 'post',
+    'cat' => '18',
     'tax_query' => array(
         array(
             'taxonomy' => 'category',
@@ -41,16 +42,16 @@ $args = array(
         ),
     ),
 );
-//var_dump($args);
+var_dump($args['cat']);
 // On exécute la WP Query
 $my_query = new WP_Query($args);
 
 // On lance la boucle !
 if( $my_query->have_posts() ) : while( $my_query->have_posts() ) : $my_query->the_post();
 
-    the_ID();
-    the_category();
-    the_title();
+    // the_ID();
+    // the_category();
+    // the_title();
     //the_content();
     //the_post_thumbnail();
 

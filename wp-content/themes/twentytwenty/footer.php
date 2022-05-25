@@ -35,13 +35,8 @@
 						?>
 
 						<p class="powered-by-wordpress">
-							<a href="<?php echo esc_url( __( 'http://localhost/blog_wordpress/' ) ); ?>">
-								<?php _e( 'Sandra Villot' ); ?>
-							</a>
-						</p>
-						<p class="powered-by-wordpress">
-							<a href="<?php echo esc_url( __( 'http://localhost/blog_wordpress/mention-legales/' ) ); ?>">
-								<?php _e( 'Mention Légale' ); ?>
+							<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentytwenty' ) ); ?>">
+								<?php _e( 'Powered by WordPress', 'twentytwenty' ); ?>
 							</a>
 						</p><!-- .powered-by-wordpress -->
 
