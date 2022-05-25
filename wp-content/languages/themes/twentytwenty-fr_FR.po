@@ -406,6 +406,10 @@ msgstr "Principal"
 msgid "Menu"
 msgstr "Menu"
 
+#: template-parts/modal-search.php:11
+msgid "Search"
+msgstr "Rechercher"
+
 #: template-parts/content.php:36
 msgid "Continue reading"
 msgstr "Lire la suite"

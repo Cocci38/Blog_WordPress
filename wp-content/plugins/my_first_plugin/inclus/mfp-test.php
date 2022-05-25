@@ -28,13 +28,16 @@ L’écriture d’une nouvelle fonction implique les étapes suivantes :
 // add_action( 'admin_menu', 'mfp_Add_My_Admin_Link' );
 
 // On définit les arguments pour définir ce que l'on souhaite récupérer
+// $cat = get_query_var('cat');
+// query_posts('cat' . $cat );
+// var_dump(query_posts('cat' . $cat . '&orderby=desc'));
 $args = array(
     'post_type' => 'post',
     'tax_query' => array(
         array(
             'taxonomy' => 'category',
             'field'    => 'slug',
-            'terms'    =>'glace',
+            'terms'    =>'beignet',
         ),
     ),
 );
@@ -44,7 +47,7 @@ $my_query = new WP_Query($args);
 
 // On lance la boucle !
 if( $my_query->have_posts() ) : while( $my_query->have_posts() ) : $my_query->the_post();
-    
+
     the_ID();
     the_category();
     the_title();
@@ -53,9 +56,28 @@ if( $my_query->have_posts() ) : while( $my_query->have_posts() ) : $my_query->th
 
 endwhile;
 endif;
-$cat_id = get_cat_ID ( 'glace' );
-var_dump($cat_id);
+
+$dupe = $wpdb->get_results( $wpdb->prepare("SELECT name_champ, type_input, name_label FROM `wp_mfp_champ`
+INNER JOIN wp_mfp_liaison ON wp_mfp_champ.id_champ = wp_mfp_liaison.champ_id
+INNER JOIN wp_mfp_input ON wp_mfp_liaison.input_id = wp_mfp_input.id_input
+WHERE category_id = 18"));
+
+
+//var_dump($dupe);
+?>
+<form action="" method="post">
+    <?php foreach ($dupe as $key) { 
+        //echo "<pre>",print_r( $key) ,"</pre><br>";?>
+
+        
+        <label for="<?= $key->name_input ?>"><?= $key->name_label ?></label>
+        <input type="<?= $key->name_input ?>">
+    <?php } ?>
+        <div class="wp-block-button is-style-primary">
+            <button type="submit" class="wp-block-button__link">Je valide</button>
+        </div>
+</form>
+<?php
 // On réinitialise à la requête principale (important)
 wp_reset_postdata();
 //echo '<pre>' .print_r($my_query) . '<pre>';
-
