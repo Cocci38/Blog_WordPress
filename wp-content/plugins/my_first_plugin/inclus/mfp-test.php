@@ -31,7 +31,6 @@ L’écriture d’une nouvelle fonction implique les étapes suivantes :
 // $cat = get_query_var('cat');
 // query_posts('cat' . $cat );
 // var_dump(query_posts('cat' . $cat . '&orderby=desc'));
-add_action('init', 'cat');
 $args = array(
     'cat' => '18',
     'tax_query' => array(
