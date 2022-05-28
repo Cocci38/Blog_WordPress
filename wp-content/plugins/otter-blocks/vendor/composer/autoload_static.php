@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit851333444495a5ff28a81fef66e20920
+class ComposerStaticInit6180861ba80d8b01e84127bfd6bfcfd9
 {
     public static $files = array (
         '16e4325dd9bdbbd2ce8c9530b088e50b' => __DIR__ . '/..' . '/codeinwp/themeisle-sdk/load.php',
@@ -106,6 +106,7 @@ class ComposerStaticInit851333444495a5ff28a81fef66e20920
         'ThemeIsle\\GutenbergBlocks\\Server\\Form_Server' => __DIR__ . '/../..' . '/inc/server/class-form-server.php',
         'ThemeIsle\\GutenbergBlocks\\Server\\Plugin_Card_Server' => __DIR__ . '/../..' . '/inc/server/class-plugin-card-server.php',
         'ThemeIsle\\GutenbergBlocks\\Server\\Template_Library_Server' => __DIR__ . '/../..' . '/inc/server/class-template-library-server.php',
+        'Themeisle\\GutenbergBlocks\\CSS\\Blocks\\Sharing_Icons_CSS' => __DIR__ . '/../..' . '/inc/css/blocks/class-sharing-icons-css.php',
         'tubalmartin\\CssMin\\Colors' => __DIR__ . '/..' . '/tubalmartin/cssmin/src/Colors.php',
         'tubalmartin\\CssMin\\Command' => __DIR__ . '/..' . '/tubalmartin/cssmin/src/Command.php',
         'tubalmartin\\CssMin\\Minifier' => __DIR__ . '/..' . '/tubalmartin/cssmin/src/Minifier.php',
@@ -115,9 +116,9 @@ class ComposerStaticInit851333444495a5ff28a81fef66e20920
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit851333444495a5ff28a81fef66e20920::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit851333444495a5ff28a81fef66e20920::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit851333444495a5ff28a81fef66e20920::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit6180861ba80d8b01e84127bfd6bfcfd9::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit6180861ba80d8b01e84127bfd6bfcfd9::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit6180861ba80d8b01e84127bfd6bfcfd9::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -79,6 +79,7 @@ return array(
     'ThemeIsle\\GutenbergBlocks\\Server\\Form_Server' => $baseDir . '/inc/server/class-form-server.php',
     'ThemeIsle\\GutenbergBlocks\\Server\\Plugin_Card_Server' => $baseDir . '/inc/server/class-plugin-card-server.php',
     'ThemeIsle\\GutenbergBlocks\\Server\\Template_Library_Server' => $baseDir . '/inc/server/class-template-library-server.php',
+    'Themeisle\\GutenbergBlocks\\CSS\\Blocks\\Sharing_Icons_CSS' => $baseDir . '/inc/css/blocks/class-sharing-icons-css.php',
     'tubalmartin\\CssMin\\Colors' => $vendorDir . '/tubalmartin/cssmin/src/Colors.php',
     'tubalmartin\\CssMin\\Command' => $vendorDir . '/tubalmartin/cssmin/src/Command.php',
     'tubalmartin\\CssMin\\Minifier' => $vendorDir . '/tubalmartin/cssmin/src/Minifier.php',

@@ -1,7 +1,7 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.1.21',
-        'version' => '1.1.21.0',
+        'pretty_version' => '1.1.22',
+        'version' => '1.1.22.0',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,8 +11,8 @@
     ),
     'versions' => array(
         'codeinwp/templates-patterns-collection' => array(
-            'pretty_version' => '1.1.21',
-            'version' => '1.1.21.0',
+            'pretty_version' => '1.1.22',
+            'version' => '1.1.22.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
