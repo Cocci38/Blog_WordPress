@@ -42,6 +42,7 @@ $args = array(
     ),
 );
 var_dump($args['cat']);
+$cat_id = $args['cat'];
 // On exécute la WP Query
 $my_query = new WP_Query($args);
 
@@ -65,19 +66,51 @@ WHERE category_id = 18"));
 
 //var_dump($dupe);
 ?>
+
 <form action="" method="post">
     <?php foreach ($dupe as $key) { 
         //echo "<pre>",print_r( $key) ,"</pre><br>";?>
 
         
         <label for="<?= $key->name_input ?>"><?= $key->name_label ?></label>
-        <input type="<?= $key->name_input ?>">
+        <input type="<?= $key->name_input ?>" name="<?= $key->name_champ ?>">
     <?php } ?>
         <div class="wp-block-button is-style-primary">
             <button type="submit" class="wp-block-button__link">Je valide</button>
         </div>
 </form>
 <?php
+//print_r($_POST);
+
 // On réinitialise à la requête principale (important)
 wp_reset_postdata();
 //echo '<pre>' .print_r($my_query) . '<pre>';
+
+var_dump($_POST);
+foreach ($_POST as $key => $value) {
+$wpdb->insert(
+    $wpdb->wp_mfp_formulaire,
+        array(
+            'name' => $value,
+            'comment' => $value,
+            'recette' => $value,
+        )
+);
+}
+// $insert = '';
+// foreach ( $post as $meta_key => $meta_value ) {
+//     if ( is_array( $meta_value ) ) {
+//         $meta_value = serialize( $meta_value );
+//     }
+//     if ( ! empty( $insert ) ) {
+//         $insert .= ', '; // On rajoute ce qui est à droite dans l'élément qui est à gauche
+//     }
+//     //$cle .= $wpdb->prepare( '(%s)', $meta_key);
+//     $insert .= $wpdb->prepare( '(%s)', $meta_value );
+//     var_dump($meta_key );
+// }
+// var_dump($insert );
+// $wpdb->query( "INSERT INTO wp_mfp_formulaire ( $meta_key) VALUES " . $insert ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+
+// wp_cache_delete( $cat_id, 'blog_meta' );
+
