@@ -81,22 +81,25 @@ WHERE category_id = 18"));
 </form>
 <?php
 //print_r($_POST);
-
+$name = $_POST['name'];
+$comment = $_POST['comment'];
+$recette = $_POST['recette'];
+$wpdb->insert(
+    'wp_mfp_formulaire',
+        array(
+            'category_id' => $cat_id,
+            'name' => $name,
+            'comment' => $comment,
+            'recette' => $recette,
+        ),array('%d', '%s', '%s','%s' )
+);
 // On réinitialise à la requête principale (important)
 wp_reset_postdata();
 //echo '<pre>' .print_r($my_query) . '<pre>';
 
 var_dump($_POST);
-foreach ($_POST as $key => $value) {
-$wpdb->insert(
-    $wpdb->wp_mfp_formulaire,
-        array(
-            'name' => $value,
-            'comment' => $value,
-            'recette' => $value,
-        )
-);
-}
+
+
 // $insert = '';
 // foreach ( $post as $meta_key => $meta_value ) {
 //     if ( is_array( $meta_value ) ) {
