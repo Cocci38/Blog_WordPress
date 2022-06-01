@@ -29,19 +29,20 @@ function formulaire(){
     global $wpdb;
     $cat = get_the_category();
     //echo "<pre>",print_r( $cat[0]->term_taxonomy_id) ,"</pre><br>";
-    $dupe = $wpdb->get_results( $wpdb->prepare("SELECT name_champ, type_input, name_label FROM `wp_mfp_champ`
+    $dupe = $wpdb->get_results( $wpdb->prepare("SELECT name_champ, type_input, name_label, category_id FROM `wp_mfp_champ`
     INNER JOIN wp_mfp_liaison ON wp_mfp_champ.id_champ = wp_mfp_liaison.champ_id
     INNER JOIN wp_mfp_input ON wp_mfp_liaison.input_id = wp_mfp_input.id_input
     WHERE category_id = " . $cat[0]->term_taxonomy_id));
-
+    
 ?>
 <form action="" method="post">
     <?php foreach ($dupe as $key) { 
         // echo "<pre>",print_r( $key) ,"</pre><br>";?>
-
+        <input type="hidden" name="<?= 'category_id' ?>" value="<?= $key->category_id ?>">
         
         <label for="<?= $key->name_input ?>"><?= $key->name_label ?></label>
         <input type="<?= $key->name_input ?>" name="<?= $key->name_champ ?>">
+        
     <?php } ?>
         <div class="wp-block-button is-style-primary">
             <button type="submit" class="wp-block-button__link">Je valide</button>
@@ -49,14 +50,17 @@ function formulaire(){
         
 </form>
 <?php
-echo "<pre>",print_r($_POST['name']) ,"</pre><br>";die();
+
+//var_dump($_POST);
+//echo "<pre>",print_r($_POST) ,"</pre><br>";die();
+$category_id = $_POST['category_id'];
 $name = $_POST['name'];
 $comment = $_POST['comment'];
 $recette = $_POST['recette'];
 $wpdb->insert(
     'wp_mfp_formulaire',
         array(
-            'category_id' => $cat[0]->term_taxonomy_id,
+            'category_id' => $category_id,
             'name' => $name,
             'comment' => $comment,
             'recette' => $recette,
