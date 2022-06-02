@@ -1,23 +1,4 @@
 <?php
-/*
-Plugin Name: Mon premier formulaire
-Description: Mon second plugin !
-Author: Cocci38
-Version: 1.0.0
-*/
-/*
-C’est le fichier principal du plugin
-*/
-
-//=================================================
-// Sécurité : On sort si ce fichier est appelé directement
-//=================================================
-//require_once '../../../wp-load.php';
-// if ( !defined('ABSPATH') ) { 
-//     die;
-// }
-
-// // fonction WordPress plugin_dir_path(__ FILE__) donne le chemin d’accès complet au répertoire où notre plugin est stocké.
 
 	/**
 	 * Pour récupérer le formulaire dans la base de donnée selon la catégorie de l'article
@@ -47,7 +28,7 @@ function formulaire(){
             
         } 
         if (!empty($dupe)) {
-            $result .="<br><div class='wp-block-button is-style-primary'>
+            $result .="<br><div class='wp-block-button is-style-secondary'>
             <button type='submit' class='wp-block-button__link'>Je valide</button>
         </div>";
 
