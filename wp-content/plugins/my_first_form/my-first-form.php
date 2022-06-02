@@ -20,7 +20,7 @@ C’est le fichier principal du plugin
 // // fonction WordPress plugin_dir_path(__ FILE__) donne le chemin d’accès complet au répertoire où notre plugin est stocké.
 
 	/**
-	 * Pour faire apparaître le formulaire
+	 * Pour récupérer le formulaire dans la base de donnée selon la catégorie de l'article
 	 *
 	 * @since 3.1.0
 
@@ -31,8 +31,8 @@ C’est le fichier principal du plugin
 function formulaire(){
     global $wpdb;
     $cat = get_the_category();
-    $lien = get_site_url();
-    echo "<pre>",print_r($lien) ,"</pre><br>";
+    // $lien = get_site_url();
+    // echo "<pre>",print_r($lien) ,"</pre><br>";
     $dupe = $wpdb->get_results( $wpdb->prepare("SELECT name_champ, type_input, name_label, category_id FROM `wp_mfp_champ`
     INNER JOIN wp_mfp_liaison ON wp_mfp_champ.id_champ = wp_mfp_liaison.champ_id
     INNER JOIN wp_mfp_input ON wp_mfp_liaison.input_id = wp_mfp_input.id_input
@@ -47,7 +47,9 @@ function formulaire(){
             
         } 
         if (!empty($dupe)) {
-            $result .="<br><button type='submit' class='wp-block-button__link'>Je valide </button>";
+            $result .="<br><div class='wp-block-button is-style-primary'>
+            <button type='submit' class='wp-block-button__link'>Je valide</button>
+        </div>";
 
             //echo "<pre>",print_r($_POST) ,"</pre><br>";
         }
